@@ -19,8 +19,13 @@
 @property (nonatomic,readwrite,unsafe_unretained) CCNode *child;
 +(id) pointWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
 -(id) initWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
-@end@implementation MainScene {
-    CCNode *_ground1;
+@end@implementation MainScene
+{
+    CGPoint _cloudParallaxRatio;
+    CGPoint _bushParallaxRatio;
+    
+    CCNode *_parallaxContainer;
+    CCParallaxNode *_parallaxBackground;    CCNode *_ground1;
     CCNode *_ground2;
     NSArray *_grounds;
     CCNode *_cloud1;
