@@ -13,13 +13,13 @@
     CCNode *_ground1;
     CCNode *_ground2;
     NSArray *_grounds;
-    CCNode *_cloud1;
+    /*CCNode *_cloud1;
     CCNode *_cloud2;
     NSArray *_clouds;
     
     CCNode *_bush1;
     CCNode *_bush2;
-    NSArray *_bushes;
+    NSArray *_bushes;*/
     NSTimeInterval _sinceTouch;
     
     NSMutableArray *_obstacles;
@@ -39,8 +39,8 @@
     self.userInteractionEnabled = TRUE;
     
     _grounds = @[_ground1, _ground2];
-    _clouds = @[_cloud1, _cloud2];
-    _bushes = @[_bush1, _bush2];
+    //_clouds = @[_cloud1, _cloud2];
+    //_bushes = @[_bush1, _bush2];
     for (CCNode *ground in _grounds) {
         // set collision txpe
         ground.physicsBody.collisionType = @"level";
@@ -184,7 +184,7 @@
             
         }
     }// move and loop the bushes
-    for (CCNode *bush in _bushes) {
+    /*for (CCNode *bush in _bushes) {
         // move the bush
         bush.position = ccp(bush.position.x -
                             (character.physicsBody.velocity.x * delta), bush.position.y);
@@ -209,7 +209,8 @@
             cloud.position = ccp(cloud.position.x +
                                  2 * cloud.contentSize.width, cloud.position.y);
         }
-    }}
+    }*/
+}
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair character:(CCSprite*)character level:(CCNode*)level {
     [self gameOver];
